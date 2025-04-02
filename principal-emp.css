@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  height: 360vh;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #101012;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #EAB81B;
+  padding: 20px 4%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - 300px); /* Largura total menos a largura do aside */
+  margin-left: 300px; /* Deixar espaço para o aside */
+  z-index: 1000; /* Garantir que o cabeçalho fique sobre outros elementos */
+}
+
+header input::placeholder {
+  color: #fff;
+}
+
+header form {
+  display: flex;
+  flex-grow: 1; /* Permite que o formulário ocupe o espaço disponível */
+}
+
+header form input.pesquisa {
+  flex-grow: 1; /* Fazer a barra de pesquisa crescer para ocupar o espaço disponível */
+  padding: 9px;
+  border: none;
+  border-radius: 4px;
+  background-color: #232333;
+  margin-left: 10px; /* Espaço entre a barra de pesquisa e o ícone de perfil */
+  margin-right: 30px;
+  color: #fff;
+}
+
+aside {
+  width: 300px;
+  height: 100vh; /* 100% da altura da viewport */
+  background-color: #16161A; /* cor de fundo da coluna */
+  position: fixed;
+  top: 0; /* Começar no topo */
+  left: 0;
+  z-index: 1001; /* Garantir que o menu lateral fique sobre o cabeçalho */
+}
+
+aside .area-add-empresa {
+  display: flex;
+  align-items: center;
+  padding: 10.5px 4%;
+  background-color: #16161A;
+}
+
+aside .area-add-empresa .text-add-empresa {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+aside .area-add-empresa .text-add-empresa p {
+  margin-bottom: 5px;
+  color: #737373;
+  font-size: 18px;
+}
+
+aside .area-add-empresa .text-add-empresa button {
+  font-size: 14px;
+  font-weight: 500;
+  color: #737373;
+  background-color: #FDD81A;
+  padding: 5px;
+  border-radius: 17px;
+  border: none;
+  width: 120px;
+  cursor: pointer;
+}
+
+aside hr {
+  border: none; /* Remove a borda padrão */
+  height: 1px; /* Define a altura da linha */
+  background-color: #A8A8A8; /* Define uma cor clara para a linha */
+}
+
+aside .filtro {
+  padding: 30px;
+}
+
+aside .filtro p {
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+aside .filtro select {
+  background-color: #1D1D25;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  width: 240px;
+  color: #D4D4D4;
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+aside .filtro .text-categoria {
+  font-size: 18px;
+  color: #D4D4D4;
+  margin-bottom: 7px;
+}
+
+.checkbox-cat {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 5px; /* Ajuste o espaço entre as colunas e linhas */
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  color: #737373;
+  font-weight: 300;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: 18px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.checkbox-row input[type="checkbox"],
+.checkbox-row label {
+  margin-right: 10px; 
+}
+
+
+aside .apl-fil {
+  font-size: 14px;
+  font-weight: 600;
+  color: #141417;
+  background-color: #FDD81A;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  width: 240px;
+  cursor: pointer;
+}
+
+aside .linha-final {
+  width: 100%;
+}
+
+main {
+  margin-top: 80px; /* Espaço para o cabeçalho */
+  margin-left: 300px; /* Espaço para a coluna */
+  padding: 20px;
+}
+
+.chat-ativo img{
+  position: absolute;
+  top: 87.8px;
+  left: 570px;
+  cursor: pointer;
+}
+
+
+          /* ======================================menu na foto de perfil======================= */
+
+          header #img-perfil:hover {
+            cursor: pointer;
+          }
+
+          .card-menu {
+            display: none;
+            z-index: 40000;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            text-align: center;
+            background-color: #2F2F3A;
+            width: 280px;
+            height: 480px; /* Altura padrão */
+            border-radius: 33px;
+            padding: 8px;
+            position: absolute; /* Mudado para absolute */
+            border: solid 1px #555555;
+            transition: height 0.3s ease; /* Transição suave ao mudar a altura */
+            top: 9.8%; /* Posição inicial de exemplo */
+            right: 1%; /* Posição inicial de exemplo */
+          }
+
+
+          .card-menu.expanded {
+            height: 540px; /* Altura expandida */
+          }
+
+          .card-menu h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 17px;
+            margin-top: 23px;
+          }
+
+          .card-menu h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            margin-top: -2px;
+            font-size: 16px;
+          }
+
+          .card-menu h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+            font-size: 13px;
+            margin-top: -17px;
+          }
+
+          .card-menu button {
+            font-family: 'Poppins', sans-serif;
+            color: #2F2F3A;
+            background-color: #FDD81A;
+            font-weight: 500;
+            width: 220px;
+            height: 30px;
+            font-size: 15px;
+            border-radius: 17px;
+            border: none;
+            transition: 0.3s;
+          }
+
+          .card-menu button:hover {
+            background-color: #cfb013;
+          }
+
+          .card-menu button#toggle-companies {
+            all: unset;
+            cursor: pointer;
+            font-size: 12px;
+            transition: 0.3s;
+          }
+
+          .card-menu button#toggle-companies:hover {
+            color: #FDD81A;
+          }
+
+          .card-menu button:hover {
+            cursor: pointer;
+          }
+
+          .card-menu-div {
+            background-color: #16161A;
+            border-radius: 33px 33px 0px 0;
+            padding: 8px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 87px;
+          }
+
+          .hidden {
+            display: none;
+          }
+
+          .company {
+            display: flex;
+            align-items: center;
+            width: 250px;
+            height: 40px;
+            font-size: 14px;
+            margin: 0px 0;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: -5px;
+            margin-top: -5px;
+            transition: 0.3s;
+          }
+
+          .company:hover {
+            cursor: pointer;
+            font-size: 15px;
+          }
+
+          .company img {
+            margin-right: 3px;
+          }
+
+          #company-list {
+            margin: 10px 0;
+            background-color: #1B1B22;
+            border-radius: 15px;
+          }
+
+          div#company-list hr {
+            background-color: #16171C;
+            border: none;
+            width: 100%;
+            height: 2px;
+          }
+
+          .configs {
+            margin-top: 20px;
+          }
+
+          .configs .aba-config {
+            all: unset;
+            height: 38px;
+            border: 1px solid #16161ab6;
+            border-left: 1px;
+            border-right: 1px;
+            width: 100%;
+            display: flex;
+            align-items: center; /* Alinha verticalmente a imagem e o texto */
+            justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+            padding-left: 10px; /* Espaçamento para não grudar nas bordas */
+          }
+
+          .configs .aba-config h5:hover {
+            font-size: 15px;
+          }
+
+          .configs .aba-config img {
+            margin-right: 8px;
+            display: inline-block;
+          }
+
+          .configs .aba-config h5 {
+            font-weight: 200;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            color: #fff;
+            display: inline-block;
+            transition: 0.3s;
+          }
+
+
+
+          /* ================================ fim menu foto de perfil======================== */
+
+          /* ================================propostas======================== */
+
+          .proposta {
+            width: 1000px;
+            height: 150px;
+            background-color: #1D1D25;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 13px;
+            margin-bottom: 20px;
+           }
+    
+           .proposta .img-proposta img {
+            margin: 0 10px;
+            margin-left: 30px;
+            
+           }
+    
+           .proposta .text-proposta {
+            color: #fff;
+            margin: 0 10px;
+            width: 800px;
+            margin-right: 50px;
+           }
+    
+           .proposta .text-proposta h1 {
+            text-align: left;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            color: #fff;
+            font-size: 20px;
+           }
+           
+           .proposta .text-proposta p {
+             margin: 0;
+             text-align: justify;
+             font-family: 'Poppins', sans-serif;
+             font-weight: 170;
+             color: #fff;
+             font-size: 13px;
+             margin-top: 5px;
+           }
+    
+         
+    
+           .proposta .area-butoes-proposta button {
+            margin: 10px 0;
+            background-color: #FDD81A;
+            color: #101012;
+            font-family: 'Poppins', sans-serif;
+             font-weight: 500;
+             font-size: 15px;
+             border: none;
+             width: 185px;
+             height: 35px;
+             border-radius: 10px;
+             cursor: pointer;
+             transition: 0.3s;
+           }
+           
+           .proposta .area-butoes-proposta button#button-proposta {
+            cursor: not-allowed;
+           }
+/*     
+           .proposta .area-butoes-proposta button:hover {
+            height: 39px;
+            width: 189px;
+            font-size: 17px;
+           } */
+    
+           .proposta .area-butoes-proposta button#saibamais-proposta {
+            background-color: #BBBBBB;
+            color: #101012;
+            font-family: 'Poppins', sans-serif;
+             font-weight: 500;
+             font-size: 15px;
+             border: none;
+             width: 185px;
+             height: 35px;
+             border-radius: 10px;
+             transition: 0.3s;
+           }
+    
+           .proposta .area-butoes-proposta button#saibamais-proposta:hover {
+            height: 39px;
+            width: 189px;
+            font-size: 17px;
+           }
+
+           /* ===============================fim=propostas======================== */
+
+           
+          /* =================================Estilos para o card chat================ */
+          .card-chat {
+            background-color: #1D1D25;
+            border-radius: 10px;
+            color: #fff;
+            padding: 20px;
+            max-width: 1100px;
+            margin: 0 auto; 
+            font-family: 'Poppins', sans-serif;
+          }
+
+          /* Cabeçalho do card */
+          .card-chat-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+          }
+
+          /* Estilos para o avatar */
+          .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+          }
+
+          /* Informações da empresa */
+          .company-info {
+            flex-grow: 1;
+          }
+
+          .company-name {
+            text-align: left;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 400;
+          }
+
+          .company-description {
+            text-align: left;
+            color: #fff;
+            font-weight: 170;
+            font-size: 13px;
+            line-height: 1.5;
+          }
+
+          /* Rodapé do card com os botões */
+          .card-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+          }
+
+          /* Estilo dos botões */
+          .closed-deal, .open-chat {
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+          }
+
+          .closed-deal {
+            background-color: #BBBBBB;
+            color: #101012;
+            font-family: 'Poppins', sans-serif;
+             font-weight: 500;
+             font-size: 15px;
+             text-align: center;
+             border: none;
+             width: 185px;
+             height: 35px;
+             border-radius: 10px;
+             transition: 0.3s;
+          }
+
+          .closed-deal:hover {
+            font-size: 17px;
+          }
+
+          .open-chat {
+            background-color: #FDD81A;
+            color: #101012;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+             font-weight: 500;
+             font-size: 15px;
+             border: none;
+             width: 865px;
+             height: 35px;
+             border-radius: 10px;
+             cursor: pointer;
+             transition: 0.3s;
+          }
+
+          .open-chat:hover {
+            font-size: 17px;
+          }
+
+
+          /* ===============================fim Estilos para o card chat================ */
+
+          
